@@ -1,0 +1,57 @@
+{
+	"name": "react-crop-kit",
+	"type": "module",
+	"version": "0.1.0",
+	"description": "Responsive image and video crop component for React 19 — drag, resize, fixed aspect ratio, circular mask, and keyboard controls.",
+	"author": "nunesunil",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/nunesunil/react-crop-kit.git"
+	},
+	"homepage": "https://github.com/nunesunil/react-crop-kit#readme",
+	"bugs": {
+		"url": "https://github.com/nunesunil/react-crop-kit/issues"
+	},
+	"exports": {
+		".": "./dist/index.js",
+		"./package.json": "./package.json",
+		"./style.css": "./dist/style.css"
+	},
+	"files": [
+		"dist",
+		"README.md",
+		"LICENSE"
+	],
+	"publishConfig": {
+		"access": "public"
+	},
+	"sideEffects": false,
+	"engines": {
+		"node": ">=22"
+	},
+	"peerDependencies": {
+		"react": "^19",
+		"react-dom": "^19"
+	},
+	"peerDependenciesMeta": {
+		"react-dom": {
+			"optional": false
+		}
+	},
+	"scripts": {
+		"build": "tsdown",
+		"dev": "tsdown --watch",
+		"typecheck": "tsc --noEmit",
+		"prepublishOnly": "pnpm run build",
+		"prepack": "pnpm run build"
+	},
+	"devDependencies": {
+		"@tsdown/css": "^0",
+		"@types/react": "^19",
+		"@types/react-dom": "^19",
+		"react": "^19",
+		"react-dom": "^19",
+		"tsdown": "^0",
+		"typescript": "^6"
+	}
+}
