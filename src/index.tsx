@@ -924,3 +924,13 @@ const ReactCropKitComponent = ({
 };
 
 export const ReactCropKit = memo(ReactCropKitComponent);
+
+export type {
+	Crop,
+	Ords,
+	PercentCrop,
+	PixelCrop,
+	XOrds,
+	XYOrds,
+	YOrds,
+} from "./types";

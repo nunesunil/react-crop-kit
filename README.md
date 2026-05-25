@@ -26,10 +26,8 @@ import "react-crop-kit/style.css";
 
 ```tsx
 import { useState } from "react";
-import { ReactCropKit, type ReactCropKitProps } from "react-crop-kit";
+import { ReactCropKit, type Crop } from "react-crop-kit";
 import "react-crop-kit/style.css";
-
-type Crop = NonNullable<ReactCropKitProps["crop"]>;
 
 function ImageCropper({ src }: { src: string }) {
   const [crop, setCrop] = useState<Crop>();
