@@ -1,8 +1,9 @@
 {
 	"name": "react-crop-kit",
 	"type": "module",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "Responsive image and video crop component for React 19 — drag, resize, fixed aspect ratio, circular mask, and keyboard controls.",
+	"license": "MIT",
 	"author": "nunesunil",
 	"repository": {
 		"type": "git",
@@ -15,7 +16,7 @@
 	"exports": {
 		".": "./dist/index.js",
 		"./package.json": "./package.json",
-		"./style.css": "./dist/style.css"
+		"./styles.css": "./dist/styles.css"
 	},
 	"files": [
 		"dist",
@@ -25,7 +26,10 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"sideEffects": false,
+	"sideEffects": [
+		"**/*.css",
+		"./dist/styles.css"
+	],
 	"engines": {
 		"node": ">=22"
 	},

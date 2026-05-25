@@ -11,7 +11,7 @@ import {
 	defaultCrop,
 	nudgeCrop,
 } from "./utils";
-import "./style.css";
+import "./styles.css";
 
 interface EVData {
 	startClientX: number;

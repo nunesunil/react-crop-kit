@@ -1,5 +1,8 @@
 # react-crop-kit
 
+[![npm version](https://img.shields.io/npm/v/react-crop-kit.svg)](https://www.npmjs.com/package/react-crop-kit)
+[![license](https://img.shields.io/npm/l/react-crop-kit.svg)](https://github.com/nunesunil/react-crop-kit/blob/main/LICENSE)
+
 A responsive image and video crop component for React 19. Drag to draw, resize with handles, nudge with the keyboard, and keep the selection in pixels or percentages.
 
 ## Install
@@ -13,11 +16,10 @@ Peer dependencies: `react` and `react-dom` (^19).
 
 ## Setup
 
-Import the component and its styles:
+Import the component — default styles are injected automatically at runtime:
 
 ```tsx
 import { ReactCropKit } from "react-crop-kit";
-import "react-crop-kit/style.css";
 ```
 
 ## Basic usage
@@ -27,7 +29,6 @@ import "react-crop-kit/style.css";
 ```tsx
 import { useState } from "react";
 import { ReactCropKit, type Crop } from "react-crop-kit";
-import "react-crop-kit/style.css";
 
 function ImageCropper({ src }: { src: string }) {
   const [crop, setCrop] = useState<Crop>();
@@ -108,7 +109,7 @@ All of `x`, `y`, `width`, and `height` are required on the crop object when you 
 | `minWidth` / `minHeight` | `number` | Minimum size in **pixels**. |
 | `maxWidth` / `maxHeight` | `number` | Maximum size in **pixels**. |
 | `className` | `string` | Extra class on the root element. |
-| `style` | `CSSProperties` | Inline styles on the root. |
+| `styles` | `CSSProperties` | Inline styles on the root. |
 | `ariaLabels` | `object` | Override default English a11y strings. |
 | `renderSelectionAddon` | `(state) => ReactNode` | Custom overlay inside the selection. |
 
@@ -129,7 +130,9 @@ Focus the crop area or a handle, then:
 
 ## Styling
 
-Default styles live in `react-crop-kit/style.css`. Override via your own CSS targeting classes such as:
+Styles ship with the bundle and are applied when you import `react-crop-kit` (no separate CSS import required). To load styles as a static stylesheet instead — for example in SSR or when your bundler strips runtime injection — import `react-crop-kit/styles.css` explicitly.
+
+Override defaults via your own CSS targeting classes such as:
 
 - `.ReactCropKit`
 - `.ReactCropKit__crop-selection`
@@ -190,4 +193,4 @@ pnpm run dev        # watch build
 
 ## License
 
-MIT © [Sunil Nune](https://github.com/nunesunil)
+[MIT](LICENSE) © [Sunil Nune](https://github.com/nunesunil)
