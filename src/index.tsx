@@ -11,7 +11,7 @@ import {
 	defaultCrop,
 	nudgeCrop,
 } from "./utils";
-import "./styles.css";
+import "./style.css";
 
 interface EVData {
 	startClientX: number;
@@ -934,3 +934,10 @@ export type {
 	XYOrds,
 	YOrds,
 } from "./types";
+
+export {
+	centerCrop,
+	convertToPercentCrop,
+	convertToPixelCrop,
+	makeAspectCrop,
+} from "./utils";

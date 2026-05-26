@@ -69,6 +69,30 @@ Pass `aspect` (width ÷ height). Examples: `1` for a square, `16 / 9` for landsc
 
 When you set `crop` for the first time (e.g. after load), `onComplete` runs once if it was previously unset — handy for previews.
 
+Helpers `centerCrop` and `makeAspectCrop` (plus `convertToPercentCrop` / `convertToPixelCrop`) ship from the same package:
+
+```tsx
+import {
+  ReactCropKit,
+  centerCrop,
+  makeAspectCrop,
+  type Crop,
+} from "react-crop-kit";
+
+function onImageLoad(e: React.SyntheticEvent<HTMLImageElement>) {
+  const { width, height } = e.currentTarget;
+  setCrop(
+    centerCrop(
+      makeAspectCrop({ unit: "%", width: 90 }, 16 / 9, width, height),
+      width,
+      height,
+    ),
+  );
+}
+```
+
+Or set a crop manually:
+
 ```tsx
 const [crop, setCrop] = useState<Crop>({
   unit: "%",
